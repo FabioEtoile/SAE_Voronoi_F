@@ -1,3 +1,5 @@
+from PIL import Image, ImageDraw
+
 def lire_points(fichier):
     points = []
     f = open(fichier, 'r')
@@ -11,4 +13,18 @@ def lire_points(fichier):
 
 points = lire_points("points.txt")
 
-print(points)
+largeur = 50
+hauteur = 50
+
+# Source https://stackoverflow.com/questions/14831248/pil-selection-of-coordinates-to-make-an-image
+img = Image.new("RGB", (largeur, hauteur), "white")
+draw = ImageDraw.Draw(img)
+
+rayon = 1
+
+for (x,y) in points:
+    # Source https://pillow.readthedocs.io/en/stable/reference/ImageDraw.html
+    draw.ellipse([(x-rayon,y-rayon),(x+rayon,y+rayon)],fill="black")
+
+img.show()
+
