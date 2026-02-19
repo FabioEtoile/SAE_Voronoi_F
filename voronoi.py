@@ -24,7 +24,7 @@ rayon = 1
 
 for (x,y) in points:
     # Source https://pillow.readthedocs.io/en/stable/reference/ImageDraw.html
-    draw.ellipse([(x-rayon,y-rayon),(x+rayon,y+rayon)],fill="black")
+    draw.circle((x,y), rayon,fill="black")
 
 img.show()
 
