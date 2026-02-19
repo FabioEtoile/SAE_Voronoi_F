@@ -27,4 +27,4 @@ for (x,y) in points:
     draw.circle((x,y), rayon,fill="black")
 
 img.show()
-
+img.save("points.png")
