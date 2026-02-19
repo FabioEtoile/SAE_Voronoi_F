@@ -1,5 +1,10 @@
 from PIL import Image, ImageDraw
 
+""" 
+Lecture des points d'un fichier ligne par ligne 
+Retourne un tableau contenant les coordonnées x,y de chaque points
+Exemple : [(2.0, 4.0), (5.3, 4.5), (18.0, 29.0), (12.5, 23.7)]
+"""
 def lire_points(fichier):
     points = []
     f = open(fichier, 'r')
@@ -28,3 +33,4 @@ for (x,y) in points:
 
 img.show()
 img.save("points.png")
+
