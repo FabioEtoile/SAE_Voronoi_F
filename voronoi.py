@@ -25,14 +25,16 @@ hauteur = 50
 mediatrice = []
 
 # (x1+x2)/2 , (y1+y2/2) = Coordonnées du point entre les deux points
-for i in range(len(points)-1):
-     point_actuel = points[i]
-     point_suivant = points[i+1]
+for i in range(len(points)):
+    for j in range(len(points)):
+        point_actuel = points[i]
+        point_suivant = points[j]
+        # Ne pas compter quand ce sont les mêmes points
+        if point_actuel != point_suivant:
+            xm = (point_actuel[0] + point_suivant[0]) / 2 
+            ym = (point_actuel[1] + point_suivant[1]) / 2 
 
-     xm = (point_actuel[0] + point_suivant[0]) / 2 
-     ym = (point_actuel[1] + point_suivant[1]) / 2 
-
-     mediatrice.append((xm,ym))
+            mediatrice.append((xm,ym))
 
 print(mediatrice)
 
