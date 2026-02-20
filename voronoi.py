@@ -22,6 +22,20 @@ points = lire_points("points.txt")
 largeur = 50
 hauteur = 50
 
+mediatrice = []
+
+# (x1+x2)/2 , (y1+y2/2) = Coordonnées du point entre les deux points
+for i in range(len(points)-1):
+     point_actuel = points[i]
+     point_suivant = points[i+1]
+
+     xm = (point_actuel[0] + point_suivant[0]) / 2 
+     ym = (point_actuel[1] + point_suivant[1]) / 2 
+
+     mediatrice.append((xm,ym))
+
+print(mediatrice)
+
 # Création du SVG avec les points
 
 # Source https://cduck.github.io/drawsvg/
@@ -31,6 +45,7 @@ rayon = 1
 
 for (x,y) in points:
      d.append(dw.Circle(x, y, rayon, fill="black"))
-
+for (x,y) in mediatrice:
+     d.append(dw.Circle(x, y, rayon, fill="red"))
 d.save_svg("points.svg")
 
