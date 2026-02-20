@@ -4,6 +4,18 @@
 <defs>
 </defs>
 <rect x="0" y="0" width="50" height="50" fill="white" />
+<path d="M-21.35,169.25 L28.65,-160.75" stroke="blue" />
+<path d="M-1240.0,816.5 L1260.0,-783.5" stroke="blue" />
+<path d="M-977.75,538.85 L992.25,-511.15" stroke="blue" />
+<path d="M28.65,-160.75 L-21.35,169.25" stroke="blue" />
+<path d="M-1213.35,651.75 L1236.65,-618.25" stroke="blue" />
+<path d="M-951.1,374.1 L968.9,-345.9" stroke="blue" />
+<path d="M1260.0,-783.5 L-1240.0,816.5" stroke="blue" />
+<path d="M1236.65,-618.25 L-1213.35,651.75" stroke="blue" />
+<path d="M280.25000000000006,-248.65 L-249.75000000000006,301.35" stroke="blue" />
+<path d="M992.25,-511.15 L-977.75,538.85" stroke="blue" />
+<path d="M968.9,-345.9 L-951.1,374.1" stroke="blue" />
+<path d="M-249.75000000000006,301.35 L280.25000000000006,-248.65" stroke="blue" />
 <circle cx="2.0" cy="4.0" r="1" fill="black" />
 <circle cx="5.3" cy="4.5" r="1" fill="black" />
 <circle cx="18.0" cy="29.0" r="1" fill="black" />
