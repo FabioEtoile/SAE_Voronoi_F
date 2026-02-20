@@ -1,8 +1,9 @@
-from PIL import Image, ImageDraw
+import drawsvg as dw
 
 """ 
 Lecture des points d'un fichier ligne par ligne 
-Retourne un tableau contenant les coordonnées x,y de chaque points
+Argument : Fichier.txt contenant les points
+Retourne : Un tableau contenant les coordonnées x,y de chaque points
 Exemple : [(2.0, 4.0), (5.3, 4.5), (18.0, 29.0), (12.5, 23.7)]
 """
 def lire_points(fichier):
@@ -21,16 +22,15 @@ points = lire_points("points.txt")
 largeur = 50
 hauteur = 50
 
-# Source https://stackoverflow.com/questions/14831248/pil-selection-of-coordinates-to-make-an-image
-img = Image.new("RGB", (largeur, hauteur), "white")
-draw = ImageDraw.Draw(img)
+# Création du SVG avec les points
 
+# Source https://cduck.github.io/drawsvg/
+d = dw.Drawing(largeur, hauteur)
+d.append(dw.Rectangle(0, 0, largeur, hauteur, fill="white"))
 rayon = 1
 
 for (x,y) in points:
-    # Source https://pillow.readthedocs.io/en/stable/reference/ImageDraw.html
-    draw.circle((x,y), rayon,fill="black")
+     d.append(dw.Circle(x, y, rayon, fill="black"))
 
-img.show()
-img.save("points.png")
+d.save_svg("points.svg")
 
