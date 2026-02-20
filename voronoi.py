@@ -19,10 +19,10 @@ def lire_points(fichier):
 
 points = lire_points("points.txt")
 
-largeur = 50
-hauteur = 50
+largeur = 500
+hauteur = 500
 
-# Source https://cduck.github.io/drawsvg/
+# Source : https://cduck.github.io/drawsvg/
 d = dw.Drawing(largeur, hauteur)
 d.append(dw.Rectangle(0, 0, largeur, hauteur, fill="white"))
 
@@ -43,16 +43,13 @@ for i in range(len(points)):
             vx = point_suivant[0] - point_actuel[0]
             vy = point_suivant[1] - point_actuel[1]
 
-            # https://www.reddit.com/r/learnmath/comments/1jjbe37/how_to_find_vectors_that_are_orthogonal_to_a/?tl=fr
+            # Source :  https://www.reddit.com/r/learnmath/comments/1jjbe37/how_to_find_vectors_that_are_orthogonal_to_a/?tl=fr
             # "Inverse les coordonnées et change le signe de l'une d'elles. Par exemple, [2,5] et [5,-2]"
-
 
             vx_perpendiculaire = -vy
             vy_perpendiculaire = vx
 
-
-            longueur = 50
-
+            longueur = hauteur
 
             x_debut = xm + vx_perpendiculaire * longueur
             y_debut = ym + vy_perpendiculaire * longueur
@@ -66,8 +63,6 @@ for i in range(len(points)):
 print(mediatrice)
 
 # Création du SVG avec les points
-
-
 rayon = 1
 
 for (x,y) in points:
