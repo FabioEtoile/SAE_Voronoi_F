@@ -32,13 +32,35 @@ points = lire_points("points.txt")
 
 largeur = 500
 hauteur = 500
-
+# on définit une cellule de base avec les 4 coins dans l'ordre  
+cellule_initiale = [(0,0), (largeur,0), (largeur,hauteur), (0,hauteur)]
+points_du_polygone = []
 # Source : https://cduck.github.io/drawsvg/
 d = dw.Drawing(largeur, hauteur)
 d.append(dw.Rectangle(0, 0, largeur, hauteur, fill="white"))
 
 
 mediatrice = []
+
+
+for p in cellule_initiale:
+    points_du_polygone.append(p[0])
+    points_du_polygone.append(p[1])
+
+# dictionnaire, pour chaque point, on donne la cellure entiere au debut 
+cellules = {}
+for p in points:
+    # on fait la copie pour chaque point
+    cellules[p] = list(cellule_initiale)
+
+for p in cellules:
+    cellule_actuelle = cellules [p]
+#list x1,x2 etc etc pour ce polygone 
+    affichage_coords = []
+    for coord in cellule_actuelle:
+        affichage_coords.append(coord[0])
+        affichage_coords.append(coord[1])
+    d.append(dw.Lines(*affichage_coords, close=True, fill='none', stroke='black'))
 
 # (x1+x2)/2 , (y1+y2/2) = Coordonnées du point entre les deux points
 for i in range(len(points)):
