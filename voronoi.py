@@ -66,8 +66,23 @@ for i in range(len(points)):
             for k in range(len(points)):
                 if k!= i and k!= j:
                     point_test = points[k]        
-                    
-                      
+                    milieu_x = (point_actuel + point_test) / 2
+                    milieu_y = (point_actuel[1] + point_test[1]) / 2
+                    vecteur_normal_x = point_test - point_actuel
+                    vecteur_normal_y = point_test[1] - point_actuel[1] 
+
+                    # Source : https://github.com/mhdadk/sutherland-hodgman, 
+                    # https://rosettacode.org/wiki/Sutherland-Hodgman_polygon_clipping
+                    # On calcule son vecteur par rapport au milieu puis par rapport à son produit scalaire.
+                    delta_x_debut = x_debut - milieu_x
+                    delta_y_debut = y_debut - milieu_y
+                    produit_scalaire_debut = delta_x_debut * vecteur_normal_x + delta_y_debut * vecteur_normal_y
+
+                    delta_x_fin = x_fin - milieu_x
+                    delta_y_fin = y_fin - milieu_y
+                    produit_scalaire_fin = delta_x_fin * vecteur_normal_x + delta_y_fin * vecteur_normal_y     
+
+
             d.append(dw.Line(x_debut, y_debut, x_fin, y_fin, stroke='blue'))
 
             mediatrice.append((xm,ym))
