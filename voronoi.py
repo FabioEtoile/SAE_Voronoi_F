@@ -82,8 +82,20 @@ for i in range(len(points)):
                     delta_y_fin = y_fin - milieu_y
                     produit_scalaire_fin = delta_x_fin * vecteur_normal_x + delta_y_fin * vecteur_normal_y     
 
-
-            d.append(dw.Line(x_debut, y_debut, x_fin, y_fin, stroke='blue'))
+                    if produit_scalaire_debut > 0 and produit_scalaire_fin > 0:
+                        break
+                    elif produit_scalaire_debut > 0 or produit_scalaire_fin > 0:
+                        # Source : https://github.com/scivision/lineclipping-python-fortran,
+                        # https://gist.github.com/marmakoide/45d5389252683ae09c2df49d0548a627
+                        t = produit_scalaire_debut / (produit_scalaire_debut - produit_scalaire_fin)
+                        ix = x_debut + t * (x_fin - x_debut)
+                        iy = y_debut + t * (y_fin - y_debut)
+                        if produit_scalaire_debut > 0:
+                            x_debut, y_debut = ix, iy
+                        else:
+                            x_fin, y_fin = ix, iy
+            else:
+                d.append(dw.Line(x_debut, y_debut, x_fin, y_fin, stroke='blue'))
 
             mediatrice.append((xm,ym))
 
