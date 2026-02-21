@@ -56,6 +56,18 @@ for i in range(len(points)):
             x_fin = xm - vx_perpendiculaire * longueur
             y_fin = ym - vy_perpendiculaire * longueur
 
+
+            '''
+            Parcourt tous les autres points pour calculer le point milieu
+            et le vecteur normal entre le point actuel et le point testé.
+            Permet de déterminer la limite de la médiatrice.
+            '''
+            # Source : https://stackoverflow.com/questions/36063533/clipping-a-voronoi-diagram-python
+            for k in range(len(points)):
+                if k!= i and k!= j:
+                    point_test = points[k]        
+                    
+                      
             d.append(dw.Line(x_debut, y_debut, x_fin, y_fin, stroke='blue'))
 
             mediatrice.append((xm,ym))
