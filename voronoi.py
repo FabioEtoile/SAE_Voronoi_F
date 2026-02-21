@@ -1,4 +1,5 @@
 import drawsvg as dw
+import os
 
 """ 
 Lecture des points d'un fichier ligne par ligne 
@@ -8,16 +9,23 @@ Exemple : [(2.0, 4.0), (5.3, 4.5), (18.0, 29.0), (12.5, 23.7)]
 """
 def lire_points(fichier):
     points = []
+    #verifier que le fichier existe avant d essayer de l ouvrir
+    if not os.path.exists(fichier):
+        print("Le fichier n'existe pas")
+        return points
     # ooverture et fermeture du fichier auto
     with open(fichier, 'r') as f:
         for ligne in f:
             # .strip() équivalent à \n (espaces et saut de ligne)
             ligne = ligne.strip()
             if ligne:
-                coordonnees = ligne.split(",")
-                x = float(coordonnees[0])
-                y = float(coordonnees[1])
-                points.append((x,y))
+                try:
+                    coordonnees = ligne.split(",")
+                    x = float(coordonnees[0])
+                    y = float(coordonnees[1])
+                    points.append((x,y))
+                except:
+                    print("erreur de format sur une ligne")
     return points
 
 points = lire_points("points.txt")
