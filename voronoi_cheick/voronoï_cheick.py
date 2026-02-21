@@ -50,7 +50,7 @@ def voronoi_test():
                 distance_avec_germe = math.hypot(tab_abscisse[i]-x, tab_ordonnee[i]-y)
             # Si la distance avec le germe est inférieur à la distance minimale alors la distance minimale 
             # du germe deviens la distance avec le germe   
-            #En gros si ce cas arrive c'est que le point selectionné est un germe 
+            #En gros si ce cas arrive c'est que le point selectionné est un germe, lui meme  
                 if  distance_avec_germe < distance_minimale:
                         distance_minimale = distance_avec_germe
                         j = i        
