@@ -66,9 +66,9 @@ for i in range(len(points)):
             for k in range(len(points)):
                 if k!= i and k!= j:
                     point_test = points[k]        
-                    milieu_x = (point_actuel + point_test) / 2
+                    milieu_x = (point_actuel[0] + point_test[0]) / 2
                     milieu_y = (point_actuel[1] + point_test[1]) / 2
-                    vecteur_normal_x = point_test - point_actuel
+                    vecteur_normal_x = point_test[0] - point_actuel[0]
                     vecteur_normal_y = point_test[1] - point_actuel[1] 
 
                     # Source : https://github.com/mhdadk/sutherland-hodgman, 
