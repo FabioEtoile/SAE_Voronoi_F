@@ -7,6 +7,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f5f5;
+
 }
 
 /* Navbar */
@@ -26,7 +27,7 @@ body {
 
 .navbar-title p {
     color: black;
-    font-size: 1.2rem;
+    font-size: 19px;
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -37,11 +38,46 @@ body {
 label {
     display: block;
     font:
-        1rem "Fira Sans",
+        16px "Fira Sans",
         sans-serif;
 }
 
 input,
 label {
-    margin: 0.4rem 0;
+    margin: 6px 0;
+}
+
+/* cadre diagramme */
+
+.cadre {
+    outline: rgb(223, 223, 223);
+    background-color: white;
+    box-shadow: 0px 1px 20px rgb(182, 182, 182);
+    margin: 20px;
+}
+
+.diagramme {
+    height: 500px;
+    width: 500px;
+    background-color: rgb(192, 192, 192);
+    margin: 20px;
+}
+
+.download-button {
+    margin: 20px;
+}
+
+/* import */
+
+.import-file {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* affichage de div au centre : https://www.impressivewebs.com/center-multiple-divs/*/
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
