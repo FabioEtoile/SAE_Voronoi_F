@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voronoi Diagramme</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <img src="src/img/LOGOTYPE-Officiel-Universite¦u-Sorbonne-Paris-Nord-2.png">
+        </div>
+        <div class="navbar-title">
+            <p>Voronoi Diagramme</p>
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <!-- Importer fichier -->
+        <div class="import-file">
+            <!-- https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/input/file -->
+            <form method="post" enctype="multipart/form-data">
+                <div>
+                    <label for="profile_pic">Sélectionnez le fichier à utiliser</label>
+                    <input type="file" id="point-txt" name="point-txt" accept=".txt" />
+                </div>
+                <div>
+                    <button id="button-txt" onclick="filesent()">Envoyer</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Cadre pour diagramme -->
+        <div class="cadre">
+            <div class="diagramme">
+                <!-- mettre le resultat du voroinoi.py-->
+                <p id="text-loading"></p>
+                <a></a>
+            </div>
+
+            <div class="download-button">
+                <!-- Classe à cacher si possible avec js (si doc pas dispo afficher message)-->
+                <!-- https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/select -->
+                <button>Télécharger</button>
+                <select name="type-img" id="type-img">
+                    <option value="png">png</option>
+                    <option value="svg">svg</option>
+                </select>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

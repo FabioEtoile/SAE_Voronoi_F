@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 32px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logo img {
+    height: 48px;
+    object-fit: contain;
+}
+
+.navbar-title p {
+    color: black;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Input */
+
+label {
+    display: block;
+    font:
+        16px "Fira Sans",
+        sans-serif;
+}
+
+input,
+label {
+    margin: 6px 0;
+}
+
+/* cadre diagramme */
+
+.cadre {
+    outline: rgb(223, 223, 223);
+    background-color: white;
+    box-shadow: 0px 1px 20px rgb(182, 182, 182);
+    margin: 20px;
+}
+
+.diagramme {
+    height: 500px;
+    width: 500px;
+    background-color: rgb(239, 239, 239);
+    margin: 20px;
+}
+
+.download-button {
+    margin: 20px;
+}
+
+/* import */
+
+.import-file {
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* affichage de div au centre : https://www.impressivewebs.com/center-multiple-divs/*/
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
