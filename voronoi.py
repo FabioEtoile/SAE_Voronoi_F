@@ -17,20 +17,42 @@ def lire_points(fichier):
     f.close()
     return points
 
-points = lire_points("points.txt")
+def calculer_intersection(xm1, ym1, vx1, vy1, xm2, ym2, vx2, vy2):
+    """
+    Calcule l'intersection de deux droites
+    Retourne (x, y)
+    """
+
+    # Source : https://openclassrooms.com/forum/sujet/calcul-du-point-d-intersection-de-deux-segments-21661
+    
+    A1 = -vy1
+    B1 = vx1
+    C1 = A1 * xm1 + B1 * ym1
+
+    A2 = -vy2
+    B2 = vx2
+    C2 = A2 * xm2 + B2 * ym2
+
+    determinant = A1 * B2 - A2 * B1
+
+    # "On peut trouver une intersection seulement si [...] != 0 (sinon les droites sont parallèles)"
+
+    if determinant == 0:
+        return None 
+
+    # Cramer pour trouver X et Y
+    x = (C1 * B2 - C2 * B1) / determinant
+    y = (A1 * C2 - A2 * C1) / determinant
+
+    return (x, y)
 
 def calculer_mediatrices(points):
-    """
-    Calcule les vecteurs médiatrices entre deux points
-    Retourne le fichier svg
-    """
     largeur = 500
     hauteur = 500
 
     # Source : https://cduck.github.io/drawsvg/
     d = dw.Drawing(largeur, hauteur)
     d.append(dw.Rectangle(0, 0, largeur, hauteur, fill="white"))
-
 
     mediatrice = []
     donnees_droites = []
@@ -70,6 +92,20 @@ def calculer_mediatrices(points):
     print(f"Données Médiatrices :  {mediatrice}")
     print(f"Données Droite : {donnees_droites}")
 
+    intersections = []
+    
+    # On compare chaque droite avec toutes les autres
+    for i in range(len(donnees_droites)):
+        for j in range(i + 1, len(donnees_droites)): 
+            d1 = donnees_droites[i]
+            d2 = donnees_droites[j]
+            
+            # d[0]=xm, d[1]=ym, d[2]=vx, d[3]=vy
+            point = calculer_intersection(d1[0], d1[1], d1[2], d1[3], d2[0], d2[1], d2[2], d2[3])
+            
+            if point != None:
+                intersections.append(point)
+
     # Création du SVG avec les points
     rayon = 1
 
@@ -77,9 +113,13 @@ def calculer_mediatrices(points):
          d.append(dw.Circle(x, y, rayon, fill="black"))
     for (x,y) in mediatrice:
          d.append(dw.Circle(x, y, rayon, fill="red"))
+         
+    # Intersections en vert
+    for (x, y) in intersections:
+        if 0 <= x <= largeur and 0 <= y <= hauteur:
+            d.append(dw.Circle(x, y, 2, fill="green"))
+            
     d.save_svg("points.svg")
-    
-
 
 points = lire_points("points.txt")
 calculer_mediatrices(points)
