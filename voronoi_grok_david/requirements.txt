@@ -1,0 +1,5 @@
+# Dépendances du projet SAE Voronoi
+pillow>=10.0.0        # Génération d'images PNG
+svgwrite>=1.4.0       # Génération de fichiers SVG
+scipy>=1.11.0         # Calcul du diagramme de Voronoi (Qhull)
+numpy>=1.24.0         # Dépendance de scipy
