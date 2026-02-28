@@ -19,8 +19,8 @@ def lire_points(fichier):
 
 points = lire_points("points.txt")
 
-largeur = 500
-hauteur = 500
+largeur = 1000
+hauteur = 1000
 
 # Source : https://cduck.github.io/drawsvg/
 d = dw.Drawing(largeur, hauteur)
@@ -70,7 +70,6 @@ for i in range(len(points)):
                     milieu_y = (point_actuel[1] + point_test[1]) / 2
                     vecteur_normal_x = point_test[0] - point_actuel[0]
                     vecteur_normal_y = point_test[1] - point_actuel[1] 
-
                     # Source : https://github.com/mhdadk/sutherland-hodgman, 
                     # https://rosettacode.org/wiki/Sutherland-Hodgman_polygon_clipping
                     # On calcule son vecteur par rapport au milieu puis par rapport à son produit scalaire.
