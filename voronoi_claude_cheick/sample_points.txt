@@ -1,0 +1,10 @@
+# Voronoi sample points file
+# Format: x,y  (one point per line)
+213,247
+54,424
+180,29
+212,237
+50,370
+95,26
+162,300
+485,174
