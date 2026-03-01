@@ -1,4 +1,5 @@
 import drawsvg as dw
+import math
 
 """ 
 Lecture des points d'un fichier ligne par ligne 
@@ -24,9 +25,13 @@ def calculer_intersection(xm1, ym1, vx1, vy1, xm2, ym2, vx2, vy2):
     """
 
     # Source : https://openclassrooms.com/forum/sujet/calcul-du-point-d-intersection-de-deux-segments-21661
-    
+    # Source : https://fr.khanacademy.org/math/fr-v2-seconde-s/x16338c0e47eff42b:geometrie-droites-dans-le-plan-repere/x16338c0e47eff42b:equation-cartesienne-d-une-droite/v/standard-form-for-linear-equations#:~:text=L'%C3%A9quation%20cart%C3%A9sienne%20d'une,la%20droite%20avec%20les%20axes.
+
     A1 = -vy1
     B1 = vx1
+    
+    
+    # Ax + By = C
     C1 = A1 * xm1 + B1 * ym1
 
     A2 = -vy2
@@ -45,6 +50,34 @@ def calculer_intersection(xm1, ym1, vx1, vy1, xm2, ym2, vx2, vy2):
     y = (A1 * C2 - A2 * C1) / determinant
 
     return (x, y)
+
+def filtrer_intersections(intersections, points):
+    vrais_intersections = []
+
+    for ix,iy in intersections:
+        distances = []
+        for px, py in points:
+            # Source : https://www.alloprof.qc.ca/fr/eleves/bv/mathematiques/math-la-distance-entre-deux-points-m1311
+            # Distance entre deux points = sqrt(x2-x1)²+(y2-y1)²
+            distance = math.sqrt((px - ix)**2 + (py - iy)**2)
+            distances.append(distance)
+
+        plus_petite_distance = distances[0]
+        for distance in distances:
+            if distance < plus_petite_distance:
+                plus_petite_distance = distance
+
+        compteur = 0 
+        for distance in distances:
+            if distance == plus_petite_distance:
+                compteur += 1 
+        
+        if compteur >= 3:
+            point = (ix, iy)
+            if point not in intersections:
+                vrais_intersections.append(point)
+
+
 
 def calculer_mediatrices(points):
     largeur = 500
@@ -106,6 +139,9 @@ def calculer_mediatrices(points):
             if point != None:
                 intersections.append(point)
 
+    vrais_intersections = filtrer_intersections(intersections,points)
+    print(f"Nombre intersections {len(vrais_intersections)}")
+
     # Création du SVG avec les points
     rayon = 1
 
@@ -115,7 +151,7 @@ def calculer_mediatrices(points):
          d.append(dw.Circle(x, y, rayon, fill="red"))
          
     # Intersections en vert
-    for (x, y) in intersections:
+    for (x, y) in vrais_intersections:
         if 0 <= x <= largeur and 0 <= y <= hauteur:
             d.append(dw.Circle(x, y, 2, fill="green"))
             
