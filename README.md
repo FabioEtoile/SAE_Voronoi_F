@@ -8,7 +8,7 @@ Dépôt Git du projet de réalisation d'une application de calcul et visualisati
 
 ## Structure du dépôt
 
-ProjetDB/
+SAE_Voronoi_F/
 │
 ├──  phase1/ ```Application développée sans aide d'IA (Code source, notice technique).```
 │   
@@ -61,6 +61,7 @@ Chaque membre a approfondi une problématique liée à l'utilisation des IA :
 | Denis VUONG     | Qualité du logiciel et de la maintenance   | 
 | Lasry BESKIWIN     | Conséquences sur les personnes travaillant avec l'IA   | 
 | Mohamed KOSBAR     | Légalité et responsabilité   | 
+
 
 
 _Livrable réalisé pour le 01/03/2026 dans le cadre du BUT 3 Informatique._
