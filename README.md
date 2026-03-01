@@ -11,17 +11,17 @@ Dépôt Git du projet de réalisation d'une application de calcul et visualisati
 
 SAE_Voronoi_F/
 │
-├── phase1/ ```Application développée sans aide d'IA (Code source, notice technique).```
+├── phase1/ ```Application développée sans aide d'IA (Code source, notice technique).```  
 │   
-├── phase2/ ```Expérimentations de développement assisté par 4 IA génératives (Prompts et journaux).```
+├── phase2/ ```Expérimentations de développement assisté par 4 IA génératives (Prompts et journaux).```  
 │  
-├── phase3 ``` Analyses individuelles des risques liés aux IA génératives.```
+├── phase3 ``` Analyses individuelles des risques liés aux IA génératives.```  
 
 ## Phase 1 : Application sans IA
 
-**Objectif :** Déterminer un diagramme de Voronoï à partir d'une liste de points.
-**Fonctionnalités :** Interface graphique (Tkinter), lecture de fichiers `.txt` de coordonnées, visualisation et export.
-**Accès au code :** Le code source se trouve dans le répertoire `:~/SAE_Voronoi_F/phase1/Deuxième approche`.
+**Objectif :** Déterminer un diagramme de Voronoï à partir d'une liste de points.  
+**Fonctionnalités :** Interface graphique (Tkinter), lecture de fichiers `.txt` de coordonnées, visualisation et export.  
+**Accès au code :** Le code source se trouve dans le répertoire `:~/SAE_Voronoi_F/phase1/Deuxième approche`.  
 
 ## Phase 2 : Développement avec IA
 Cette section compare les performances de développement avec 4 IA différentes :
