@@ -10,12 +10,12 @@ Dépôt Git du projet de réalisation d'une application de calcul et visualisati
 ## Structure du dépôt
 
 SAE_Voronoi_F/  
- │
-    ├── phase1/ ```Application développée sans aide d'IA (Code source, notice technique).```  
-    │   
-    ├── phase2/ ```Expérimentations de développement assisté par 4 IA génératives (Prompts et journaux).```  
-    │  
-    ├── phase3 ``` Analyses individuelles des risques liés aux IA génératives.```  
+
+ ├── phase1/ ```Application développée sans aide d'IA (Code source, notice technique).```  
+ │   
+ ├── phase2/ ```Expérimentations de développement assisté par 4 IA génératives (Prompts et journaux).```  
+ │  
+ ├── phase3 ``` Analyses individuelles des risques liés aux IA génératives.```  
 
 ## Phase 1 : Application sans IA
 
@@ -52,3 +52,4 @@ Chaque membre a approfondi une problématique liée à l'utilisation des IA :
 
 
 _Livrable réalisé pour le 01/03/2026 dans le cadre du BUT 3 Informatique._
+
