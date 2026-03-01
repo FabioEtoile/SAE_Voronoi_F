@@ -2,33 +2,29 @@
 
 Dépôt Git du projet de réalisation d'une application de calcul et visualisation de diagrammes de Voronoï.
 
-##  Équipe
+## 👥 Équipe
 
 -   **Étudiants :** Mohamed KOSBAR, Fabio ETOILE, Cheick-Oumar SOW, David DIEMA, Denis VUONG, Lasry BESKIWIN.
 
 ## Structure du dépôt
 
-ProjetDB/
+SAE_Voronoi_F/
 │
-├──  phase1/ ```Application développée sans aide d'IA (Code source, notice technique).```
+├── phase1/ ```Application développée sans aide d'IA (Code source, notice technique).```
 │   
-├──  phase2/```Expérimentations de développement assisté par 4 IA génératives (Prompts et journaux).```
+├── phase2/ ```Expérimentations de développement assisté par 4 IA génératives (Prompts et journaux).```
 │  
-├──  phase_3_cheick-oumar_sow ``` Analyse individuelle :   réputation et appropriation du produit par le public```
+├── phase_3_cheick-oumar_sow/ ```Analyse individuelle : Réputation et appropriation du produit par le public```
 │
-├──  phase_3_david_diema ``` Analyse individuelle :   environnement```
+├── phase_3_david_diema/ ```Analyse individuelle : Environnement```
 │   
-├──  phase_3_denis_vuong ``` Analyse individuelle :   qualité du logiciel et de la maintenance```
+├── phase_3_denis_vuong/ ```Analyse individuelle : Qualité du logiciel et de la maintenance```
 │   
-├──  phase_3_fabio_etoile ``` Analyse individuelle :   coût économique, souveraineté et géopolitique```
+├── phase_3_fabio_etoile/ ```Analyse individuelle : Coût économique, souveraineté et géopolitique```
 │  
-├──  phase_3_david_diema/ ``` Analyse individuelle :   réputation et appropriation du produit par le public```
+├── phase_3_lasry_beskiwin/ ```Analyse individuelle : Conséquences sur les personnes travaillant avec l'IA```
 │
-├──  phase_3_lasry_beskiwin ``` Analyse individuelle :   conséquences sur les personnes travaillant avec l'IA```
-│
-├──  phase_3_mohamed_kosbar ``` Analyse individuelle :   légalité et responsabilité```
-
-    
+├── phase_3_mohamed_kosbar/ ```Analyse individuelle : Légalité et responsabilité```
 
 ## Phase 1 : Application sans IA
 
@@ -53,14 +49,14 @@ Chaque dossier contient les prompts utilisés, le journal de correction des bugs
 
 Chaque membre a approfondi une problématique liée à l'utilisation des IA :
 
-| Étudiant | Sujet| 
+| Étudiant | Sujet | 
 |:-------- |:--------:| 
-| Fabio ETOILE     | Coût économique, souveraineté et géopolitique   | 
-| Cheick-Oumar SOW | Réputation et appropriation du produit par le public   | 
-| David DIEMA     | Environnement   | 
-| Denis VUONG     | Qualité du logiciel et de la maintenance   | 
-| Lasry BESKIWIN     | Conséquences sur les personnes travaillant avec l'IA   | 
-| Mohamed KOSBAR     | Légalité et responsabilité   | 
+| Fabio ETOILE | Coût économique, souveraineté et géopolitique | 
+| Cheick-Oumar SOW | Réputation et appropriation du produit par le public | 
+| David DIEMA | Environnement | 
+| Denis VUONG | Qualité du logiciel et de la maintenance | 
+| Lasry BESKIWIN | Conséquences sur les personnes travaillant avec l'IA | 
+| Mohamed KOSBAR | Légalité et responsabilité | 
 
 
 _Livrable réalisé pour le 01/03/2026 dans le cadre du BUT 3 Informatique._
