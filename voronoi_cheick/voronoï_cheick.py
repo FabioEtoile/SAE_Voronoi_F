@@ -2,6 +2,29 @@ from PIL import Image
 import math 
 import random
 
+
+""" 
+Lecture des points d'un fichier ligne par ligne 
+Argument : Fichier.txt contenant les points
+Retourne : Un tableau contenant les coordonnées x,y de chaque points
+Exemple : [(2.0, 4.0), (5.3, 4.5), (18.0, 29.0), (12.5, 23.7)]
+"""
+
+def lire_points(fichier):
+    points = []
+    f = open(fichier, 'r')
+    for ligne in f:
+        coordonnees = ligne.split(",")
+        x = int(coordonnees[0])
+        y = int(coordonnees[1])
+        points.append(x)
+        points.append(y)
+
+    f.close()
+    return points
+
+
+
 def voronoi_test():
     image = Image.new('RGB',(500,500))
     imgx, imgy = image.size
@@ -24,9 +47,14 @@ def voronoi_test():
 
 # Ce programme va donc consisté pour chaque point a calculer la distance avec les noyaux(points spéciaux) et lorsque le point le plus proche 
 # d'un noyau il fait alors part de sa cellule 
-    tab_abscisse = [56, 56, 77, 43]
-    tab_ordonnee = [445, 23, 78, 22]
-    germes = len(tab_abscisse)
+    # tab_abscisse = [56, 56, 77, 43]
+    # tab_ordonnee = [445, 23, 78, 22]
+    # germes = len(tab_abscisse)
+    
+    
+    points = lire_points("points.txt")
+    
+    germes = len(points)//2
 
     Ro = []
     Gr = []
@@ -47,7 +75,8 @@ def voronoi_test():
             j = -1
             #pour chaque germe on vérifie sa distance avec un point 
             for i in range(germes):
-                distance_avec_germe = math.hypot(tab_abscisse[i]-x, tab_ordonnee[i]-y)
+                distance_avec_germe = math.hypot(points[i]-x, points[i+1]-y)
+
             # Si la distance avec le germe est inférieur à la distance minimale alors la distance minimale 
             # du germe deviens la distance avec le germe   
             #En gros si ce cas arrive c'est que le point selectionné est un germe, lui meme  
@@ -58,7 +87,6 @@ def voronoi_test():
             
     image.save('placer_point.png')
     image.show()
-    # print(f"taille de l'image: {image.size}") 
-    
+  
 
 voronoi_test()
