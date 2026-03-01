@@ -56,16 +56,16 @@ def voronoi_test():
     
     germes = len(points)//2
 
-    Ro = []
-    Gr = []
-    Bl = []
+    Red = []
+    Green = []
+    Blue = []
 
     # pour pouvoir colorier les zones déterminer dans la boucle : for i in range(germes):
     # on sélectionne le hasard pour etre sur d'obtenir des couleurs différentes 
     for i in range(germes):
-            Ro.append(random.randrange(256))
-            Gr.append(random.randrange(256))
-            Bl.append(random.randrange(256))
+            Red.append(random.randrange(256))
+            Green.append(random.randrange(256))
+            Blue.append(random.randrange(256))
 
 
     for y in range(500):
@@ -83,7 +83,7 @@ def voronoi_test():
                 if  distance_avec_germe < distance_minimale:
                         distance_minimale = distance_avec_germe
                         j = i        
-            image.putpixel((x,y),(Ro[j],Gr[j],Bl[j]))
+            image.putpixel((x,y),(Red[j],Green[j],Blue[j]))
             
     image.save('placer_point.png')
     image.show()
