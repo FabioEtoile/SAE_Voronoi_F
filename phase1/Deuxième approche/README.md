@@ -14,7 +14,6 @@
 
 - Lecture des fichiers : Importe des listes de points quand on ouvre un fichier .txt adapté
 - Calcul : Calcul des distances avec les points 1 à 1
-- test 
 
 ## Résultat obtenu 
 ![Aperçu du rendu](voronoi.png)
