@@ -75,20 +75,17 @@ def voronoi_test():
             distance_minimale = math.hypot(imgx-1, imgy-1)
             j = -1
             #pour chaque germe on vérifie sa distance avec un point 
-            for i in range(germes):
-                if i==0 :
-                    distance_avec_germe = math.hypot(points[i]-x, points[i+1]-y)
+            for i in range(0, len(points), 2):
                 
-                else: 
-                    distance_avec_germe = math.hypot(points[i+1]-x, points[i+2]-y)
-
-
+                distance_avec_germe = math.hypot(points[i]-x, points[i+1]-y)
+                print (points[i], points[i+1])
+                
             # Si la distance avec le germe est inférieur à la distance minimale alors la distance minimale 
             # du germe deviens la distance avec le germe   
             # En gros si ce cas arrive c'est que le point selectionné est un germe, lui meme  
                 if  distance_avec_germe < distance_minimale:
                         distance_minimale = distance_avec_germe
-                        j = i        
+                        j = i//2
             image.putpixel((x,y),(Red[j],Green[j],Blue[j]))
             
     image.save('placer_point.png')
