@@ -7,7 +7,8 @@ import random
 Lecture des points d'un fichier ligne par ligne 
 Argument : Fichier.txt contenant les points
 Retourne : Un tableau contenant les coordonnées x,y de chaque points
-Exemple : [(2.0, 4.0), (5.3, 4.5), (18.0, 29.0), (12.5, 23.7)]
+Exemple : [2, 4, 5, 4, 18, 29, 12, 23]
+
 """
 
 def lire_points(fichier):
@@ -84,7 +85,7 @@ def voronoi_test():
 
             # Si la distance avec le germe est inférieur à la distance minimale alors la distance minimale 
             # du germe deviens la distance avec le germe   
-            #En gros si ce cas arrive c'est que le point selectionné est un germe, lui meme  
+            # En gros si ce cas arrive c'est que le point selectionné est un germe, lui meme  
                 if  distance_avec_germe < distance_minimale:
                         distance_minimale = distance_avec_germe
                         j = i        
