@@ -1,3 +1,4 @@
+
 # SAE S6.A.01 - Diagrammes de Voronoï
 
 Dépôt Git du projet de réalisation d'une application de calcul et visualisation de diagrammes de Voronoï.
@@ -14,17 +15,7 @@ SAE_Voronoi_F/
 │   
 ├── phase2/ ```Expérimentations de développement assisté par 4 IA génératives (Prompts et journaux).```
 │  
-├── phase_3_cheick-oumar_sow/ ```Analyse individuelle : Réputation et appropriation du produit par le public```
-│
-├── phase_3_david_diema/ ```Analyse individuelle : Environnement```
-│   
-├── phase_3_denis_vuong/ ```Analyse individuelle : Qualité du logiciel et de la maintenance```
-│   
-├── phase_3_fabio_etoile/ ```Analyse individuelle : Coût économique, souveraineté et géopolitique```
-│  
-├── phase_3_lasry_beskiwin/ ```Analyse individuelle : Conséquences sur les personnes travaillant avec l'IA```
-│
-├── phase_3_mohamed_kosbar/ ```Analyse individuelle : Légalité et responsabilité```
+├── phase3 ``` Analyses individuelles des risques liés aux IA génératives.```
 
 ## Phase 1 : Application sans IA
 
