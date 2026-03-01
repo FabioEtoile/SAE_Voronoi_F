@@ -11,7 +11,7 @@ Dépôt Git du projet de réalisation d'une application de calcul et visualisati
 
 SAE_Voronoi_F/  
 
-    │
+│
     ├── phase1/ ```Application développée sans aide d'IA (Code source, notice technique).```  
     │   
     ├── phase2/ ```Expérimentations de développement assisté par 4 IA génératives (Prompts et journaux).```  
