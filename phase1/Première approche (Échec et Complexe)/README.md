@@ -10,7 +10,7 @@
 
 L'idée était de "simplifier" le concept de Voronoi en calculant petit à petit pleins d'étapes jusqu'à ne garder à la fin que les zones de Voronoi. 
 - Problème rencontré : Le filtrage des intersections s'est avéré plus compliqué que prévu, et on ne sait pas comment on aurait continué après cette étape.
-- Resultat : On a mit de côté cette approche pour aller sur une version Brute Force
+- Resultat : On a mit de côté ce code qui est trop basé sur la géométrie pour se concentrer sur notre deuxième approche.
 
 ## Qu'est ce que ça fait actuellement ? ⚙️
 
