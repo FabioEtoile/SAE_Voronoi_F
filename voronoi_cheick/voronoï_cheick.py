@@ -29,7 +29,7 @@ def lire_points(fichier):
 
 def montrer_image(fichierPng):
     image.save(fichierPng)
-    image.show()
+    # image.show()
 
 
 
@@ -78,7 +78,7 @@ def voronoi_test():
             for i in range(0, len(points), 2):
                 
                 distance_avec_germe = math.hypot(points[i]-x, points[i+1]-y)
-                print (points[i], points[i+1])
+                #print (points[i], points[i+1])
                 
             # Si la distance avec le germe est inférieur à la distance minimale alors la distance minimale 
             # du germe deviens la distance avec le germe   
@@ -92,4 +92,5 @@ def voronoi_test():
 
   
 
-voronoi_test()
+# inutile car générer par le gui 
+# voronoi_test() 
