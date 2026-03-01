@@ -75,7 +75,12 @@ def voronoi_test():
             j = -1
             #pour chaque germe on vérifie sa distance avec un point 
             for i in range(germes):
-                distance_avec_germe = math.hypot(points[i]-x, points[i+1]-y)
+                if i==0 :
+                    distance_avec_germe = math.hypot(points[i]-x, points[i+1]-y)
+                
+                else: 
+                    distance_avec_germe = math.hypot(points[i+1]-x, points[i+2]-y)
+
 
             # Si la distance avec le germe est inférieur à la distance minimale alors la distance minimale 
             # du germe deviens la distance avec le germe   
