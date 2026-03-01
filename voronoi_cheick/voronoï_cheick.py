@@ -2,6 +2,8 @@ from PIL import Image
 import math 
 import random
 
+image = Image.new('RGB',(500,500))
+imgx, imgy = image.size
 
 """ 
 Lecture des points d'un fichier ligne par ligne 
@@ -25,11 +27,14 @@ def lire_points(fichier):
     return points
 
 
+def montrer_image(fichierPng):
+    image.save(fichierPng)
+    image.show()
+
+
 
 def voronoi_test():
-    image = Image.new('RGB',(500,500))
-    imgx, imgy = image.size
-
+   
     # http://patrick.thevenon.free.fr/Docs/2019/2019_2SNT_Acti03_Image_python.pdf
     # C'est pour créer une image 
 
@@ -48,13 +53,8 @@ def voronoi_test():
 
 # Ce programme va donc consisté pour chaque point a calculer la distance avec les noyaux(points spéciaux) et lorsque le point le plus proche 
 # d'un noyau il fait alors part de sa cellule 
-    # tab_abscisse = [56, 56, 77, 43]
-    # tab_ordonnee = [445, 23, 78, 22]
-    # germes = len(tab_abscisse)
-    
-    
+
     points = lire_points("points.txt")
-    
     germes = len(points)//2
 
     Red = []
@@ -87,9 +87,9 @@ def voronoi_test():
                         distance_minimale = distance_avec_germe
                         j = i//2
             image.putpixel((x,y),(Red[j],Green[j],Blue[j]))
-            
-    image.save('placer_point.png')
-    image.show()
+    
+    montrer_image('placer_point.png')      
+
   
 
 voronoi_test()
