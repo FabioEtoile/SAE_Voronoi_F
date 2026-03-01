@@ -30,7 +30,6 @@ def calculer_intersection(xm1, ym1, vx1, vy1, xm2, ym2, vx2, vy2):
     A1 = -vy1
     B1 = vx1
     
-    
     # Ax + By = C
     C1 = A1 * xm1 + B1 * ym1
 
@@ -79,16 +78,9 @@ def calculer_intersection(xm1, ym1, vx1, vy1, xm2, ym2, vx2, vy2):
 #             point = (ix, iy)
 #             if point not in vrais_intersections:
 #                 vrais_intersections.append(point)
+#     return vrais_intersections
 
-
-def calculer_mediatrices(points):
-    largeur = 500
-    hauteur = 500
-
-    # Source : https://cduck.github.io/drawsvg/
-    d = dw.Drawing(largeur, hauteur)
-    d.append(dw.Rectangle(0, 0, largeur, hauteur, fill="white"))
-
+def preparer_donnees_voronoi(points):
     mediatrice = []
     donnees_droites = []
 
@@ -112,20 +104,26 @@ def calculer_mediatrices(points):
                 vx_perpendiculaire = -vy
                 vy_perpendiculaire = vx
 
-                longueur = hauteur
-
-                x_debut = xm + vx_perpendiculaire * longueur
-                y_debut = ym + vy_perpendiculaire * longueur
-                x_fin = xm - vx_perpendiculaire * longueur
-                y_fin = ym - vy_perpendiculaire * longueur
-
-                d.append(dw.Line(x_debut, y_debut, x_fin, y_fin, stroke='blue'))
-
                 mediatrice.append((xm,ym))
                 donnees_droites.append((xm,ym,vx_perpendiculaire,vy_perpendiculaire))
+    return mediatrice, donnees_droites
 
-    print(f"Données Médiatrices :  {mediatrice}")
-    print(f"Données Droite : {donnees_droites}")
+def tracer_diagramme_voronoi(points, mediatrice, donnees_droites):
+    largeur = 500
+    hauteur = 500
+
+    # Source : https://cduck.github.io/drawsvg/
+    d = dw.Drawing(largeur, hauteur)
+    d.append(dw.Rectangle(0, 0, largeur, hauteur, fill="white"))
+
+    # On affiche les lignes
+    for xm, ym, vx_p, vy_p in donnees_droites:
+        longueur = hauteur
+        x_debut = xm + vx_p * longueur
+        y_debut = ym + vy_p * longueur
+        x_fin = xm - vx_p * longueur
+        y_fin = ym - vy_p * longueur
+        d.append(dw.Line(x_debut, y_debut, x_fin, y_fin, stroke='blue'))
 
     intersections = []
     
@@ -162,5 +160,7 @@ def calculer_mediatrices(points):
             
     d.save_svg("points.svg")
 
+# Programme principal
 points = lire_points("points.txt")
-calculer_mediatrices(points)
+mediatrice, donnees_droites = preparer_donnees_voronoi(points)
+tracer_diagramme_voronoi(points, mediatrice, donnees_droites)
